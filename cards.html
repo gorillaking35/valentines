@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <title>💖</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .cards {
+      display: flex;
+      gap: 30px;
+    }
+
+    .card {
+      width: 200px;
+      height: 250px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    .card-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .card.flipped .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front,
+    .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      font-size: 18px;
+    }
+
+    .card-front {
+      background: white;
+    }
+
+    .card-back {
+      background: #ff4d6d;
+      color: white;
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cards">
+    <!-- CARD 1 -->
+    <div class="card" onclick="flip(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          💲 Elus on tähtis raha ja kallid asjad, edevus ning vähe hoolitakse rahust või õnnest
+        </div>
+        <div class="card-back">
+          Restoran StenHus
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card" onclick="flip(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          💖 Elu põhiväärtuseks on sisemine rahu ja õnnelikkus, aga ka edu ja sellega kaasnev jõukus, mis võimaldab teha asju, mis rõõmu toovad, nagu reisimine ja uute kogemuste nautimine
+        </div>
+        <div class="card-back">
+          18+ SPA + Restoran Brooklyn Mimossa
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="card" onclick="flip(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          ☀️ Elu põhiväärtuseks on olla lihtsalt okeis kohas nii finantsiliselt kui mentaalselt, ilma liigse edevuse või ülemääruseta
+        </div>
+        <div class="card-back">
+          Restoran Sadu?
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function flip(card) {
+      card.classList.toggle("flipped");
+    }
+  </script>
+
+</body>
+</html>
